@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/home/louiza/Bureau/HTML/bootstrap-4.6.0-dist/css/bootstrap.min.css">
+    <title>Exo2</title>
+  </head>
+  <body>
+    <div class="container">
+      <h2 class="text-center">Mon Exo2 J-S</h2>
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-3">
+            <p>Cliquez pour ajouter un éléments au milieu du tableau.</p>
+            <input type="text" id="plus" value="">
+            <button onclick="test1()">Cliquez</button>
+            <p id="tex1"></p>
+        </div>
+        <div class="col-12 col-md-3">
+            <p>Cliquez pour fusionner les deux tableaux.</p>
+            <button onclick="test2()">Cliquez</button>
+            <p id="tex2"></p>
+        </div>
+        <div class="col-12 col-md-3">
+            <p>Cliquez pour ajoutez l'élément au debut du tableau.</p>
+            <input id="tex3" type="text" value="">
+            <button onclick="test3()">Cliquez</button>
+            <p id="text3"></p>
+        </div>
+        <div class="col-12 col-md-3">
+            <p>Cliquez pour ajoutez l'élément a la fin du tableau.</p>
+            <input id="tex4" type="text" value="">
+            <button onclick="test4()">Cliquez</button>
+            <p id="text4"></p>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript">
+    // for(var i = 0; i < langages.length; i++){
+    //   document.write("" + langages[i] + "");
+    //   }
+
+// 1er test ajouter un element au milieux de mon tableau
+    var colors = ["Red", "Orange", "Green", "Blue"];
+     document.getElementById("tex1").innerHTML = colors;
+     function test1() {
+       var plu = document.getElementById('plus').value;
+         colors.splice(2, 0, plu);
+         document.getElementById("tex1").innerHTML = colors;
+      }
+
+
+// 2em test Fusionner deux table
+      var fruit = ["Poire", "Pomme", "Orange"];
+      var legume = ["Cougette", "Carotte"];
+      document.getElementById("tex2").innerHTML = fruit + '\n' + legume;
+      function test2() {
+          var frlgm = fruit.concat(legume);
+          document.getElementById("tex2").innerHTML = frlgm;
+      }
+
+// 3em test ajouter un element tout au debut de mon tableau
+      var tabv = ["Paris", "Lyon", "Bordeaux"];
+      document.getElementById('text3').innerHTML = tabv;
+
+      function test3() {
+        var ajoutd = document.getElementById('tex3').value;
+        tabv.unshift(ajoutd);
+        // var tabF = tab.concat(ajout);
+        document.getElementById('text3').innerHTML = tabv;
+      }
+
+// 4em test ajouter a la fin de mon tableau
+      var tab = ["Algerie", "France", "Canada", "Turquie"];
+      document.getElementById('text4').innerHTML = tab;
+
+      function test4() {
+          var ajout = document.getElementById('tex4').value;
+          tab.push(ajout);
+          // var tabF = tab.concat(ajout);
+          document.getElementById('text4').innerHTML = tab;
+      }
+
+
+
+
+      // var tab=new Array();
+      // tab[0]="HTML";
+      // tab[1]="CSS";
+      // tab[2]="Bootstrap";
+      // tab[3]="JavaScript";
+      // tab[4]="PHP";
+      // tab[5]="SQL";
+      // tab[6]="Python";
+      // var longueur=tab.length;
+      // function displayTab(j) {
+      //     alert("Langages "+j+" = "+tab[j]);
+      //   }
+
+                            // function displayTab() {
+                            // // int main(int argc, char *argv[]){
+                            //    int tableau[4], i = 0;
+                            //    tableau[0] = 10;
+                            //    tableau[1] = 23;
+                            //    tableau[2] = 505;
+                            //    tableau[3] = 8;
+                            //    for (i = 0 ; i < 4 ; i++){
+                            //        printf("%d\n", tableau[i]);
+                            //    }
+                            //    return 0;
+                            // }
+                            /* Création d'un tableau de 100 000 de nombres aléatoires */
+                            // var aleatoire=new Array();
+                            // for (var i=0; i<10; i++) {
+                            //   aleatoire[i]=Math.random();
+                            // }
+                            //
+                            // /* Calcul de la moyenne */
+                            // var somme=0;
+                            // for (var i=0; i<aleatoire.length; i++) {
+                            //   somme+=aleatoire[i];
+                            // }
+                            // var moyenne=somme / aleatoire.length;
+                            // document.write( "moyenne = " + moyenne );
+
+
+    </script>
+
+
+    <!-- <script>
+    window.alert('Nom');
+    window.alert('Prenom');
+    window.alert('Ville'); -->
+
+  </body>
+</html>

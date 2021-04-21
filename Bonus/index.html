@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/home/louiza/Bureau/HTML/bootstrap-4.6.0-dist/css/bootstrap.min.css">
+    <title>Bonus</title>
+  </head>
+  <body>
+    <div class="container">
+      <h2 class="text-center">Le Bonus J-S</h2>
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-6">
+          <p class="text-center">Choisis un nombre entre 1 et 100, et clické sur le botton.</p>
+          <p class="text-center">Attention vous avez droit qu'à cinque essaie.</p>
+          <div class="text-center">
+            <input class="text-center" id="valeur" type="number" name="" value="">
+            <button class="text-center" id="clic" onclick="devinJeu()">Click</button>
+            <p class="text-center" id="essaie">Nombre d'essaie:</p>
+            <input class="text-center" id="cloc" type="button" name="" value="">
+          </div>
+          <div class="text-center" id="afich" class="alert" role="alert"></div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript">
+      var sol = Math.floor((Math.random() * 100) + 1);
+      console.log(sol);
+      let counter = 1;
+      var arret = 1;
+
+      function devinJeu() {
+        if(arret > 5){
+          alert('pas');
+          return;
+        }
+        var NmbrEss = document.getElementById("cloc");
+        NmbrEss.value = counter;
+        counter ++;
+        var NmbrC = counter-1;
+
+        var afch = document.getElementById('afich');
+        var nmbr = document.getElementById('valeur').value;
+
+          if (nmbr != sol && nmbr > sol) {
+            afch.innerHTML = nmbr + " est trop grand";
+            afch.style.background = "lightskyblue";
+          } else if (nmbr != "" && nmbr < sol) {
+            afch.innerHTML = nmbr + " est trop petit";
+            afch.style.background = "lightgray";
+          } else if (nmbr == sol && counter <= 6) {
+            afch.innerHTML = "Bravo ! La solution était " + sol + " vous l'avez trouver au " + NmbrC + " essaie.";
+            afch.style.background = "lightgreen";
+            document.getElementById('cloc').style.background = "lightgreen";
+          } else if (nmbr == "") {
+            afch.innerHTML = "Veuiler saisir un nombre.";
+            afch.style.background = "salmon";
+          } if (nmbr != sol && counter >= 6){
+            afch.innerHTML = "Perdu ! vous avez dépasser le nombre d'essaie autoriser, la solutio étais " + sol + "\n" + "Veuiller rafrichir la page svp. Merci";
+            afch.style.background = "salmon";
+          } else if (nmbr != sol && counter >= 5) {
+            document.getElementById('essaie').textContent = "Attention vous êtes au dernier essaie:"
+            document.getElementById('cloc').style.background = "salmon";
+          }
+        }
+
+// for (var i = 0; i < 5; i++) {
+//   text += "The number is " + i + "<br>";
+// }
+
+
+      // var proposition = document.getElementById('valeur').value;
+      // var solution = Math.floor((Math.random() * 100) + 1);
+      // console.log(solution);
+      // var afch = document.getElementById('afich');
+      // function devinJeu() {
+      //   var NombreEssai = 1;
+      //   for (NombreEssai = 1; NombreEssai <= 6 ; NombreEssai++) {
+      //
+      //     if (proposition === solution) {
+      //         afch.innerHTML = "Bravo, la solution est " + solution + ". Vous avez trouvé en " + NombreEssai + " essais.";
+      //         break;
+      //
+      //     } if ((proposition < solution) && (NombreEssai !== 6))  {
+      //         afch.innerHTML = proposition + " est trop petit.";
+      //
+      //     } if ((proposition > solution) && (NombreEssai !== 6)) {
+      //         afch.innerHTML = proposition + " est trop grand.";
+      //     }
+          // } if ((proposition < solution) && (NombreEssai === 6)) {
+          //     afch.innerHTML = proposition + " est trop petit. Vous avez perdu.";
+          //
+          // } if ((proposition > solution) && (NombreEssai === 6)) {
+          //     afch.innerHTML = proposition + " est trop grand. Vous avez perdu.";
+          // }
+      //   }
+      // }
+
+
+                            // function displayTab() {
+                            // // int main(int argc, char *argv[]){
+                            //    int tableau[4], i = 0;
+                            //    tableau[0] = 10;
+                            //    tableau[1] = 23;
+                            //    tableau[2] = 505;
+                            //    tableau[3] = 8;
+                            //    for (i = 0 ; i < 4 ; i++){
+                            //        printf("%d\n", tableau[i]);
+                            //    }
+                            //    return 0;
+                            // }
+                            /* Création d'un tableau de 100 000 de nombres aléatoires */
+                            // var aleatoire=new Array();
+                            // for (var i=0; i<10; i++) {
+                            //   aleatoire[i]=Math.random();
+                            // }
+                            //
+                            // /* Calcul de la moyenne */
+                            // var somme=0;
+                            // for (var i=0; i<aleatoire.length; i++) {
+                            //   somme+=aleatoire[i];
+                            // }
+                            // var moyenne=somme / aleatoire.length;
+                            // document.write( "moyenne = " + moyenne );
+
+
+    </script>
+
+
+    <!-- <script>
+    window.alert('Nom');
+    window.alert('Prenom');
+    window.alert('Ville'); -->
+
+  </body>
+</html>

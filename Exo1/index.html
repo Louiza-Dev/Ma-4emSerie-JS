@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/home/louiza/Bureau/HTML/bootstrap-4.6.0-dist/css/bootstrap.min.css">
+    <title>Exo1</title>
+  </head>
+  <body>
+    <div class="container">
+      <h2 class="text-center">Mon Exo1 J-S</h2>
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-4">
+          <form class="text-center" name="f">
+            <input type="button" value="Contenu du tableau" onClick="displayTab()">
+          </form>
+          <p class="text-center" id="affich"></p>
+        </div>
+        <div class="col-12 col-md-4">
+          <form class="text-center" name="f2" action="index.html" method="post">
+            <input type="button" value="Les Jours" onClick="displayTab2()">
+          </form>
+          <p class="text-center" id="voir"></p>
+        </div>
+        <div class="col-12 col-md-4">
+          <form class="text-center" name="f1">
+            Indice : <input type="text" name="indice" size=5 value=0>
+            <input type="button" value="Voir Mois" onClick="displayMois(this.form.indice.value)">
+          </form>
+          <p class="text-center" id="Mois"></p>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript">
+    var tab = ["HTML","CSS","Bootstrap", "JavaScript", "PHP", "SQL", "Python"];
+    var tab2=new Array("Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samedi","Dimanche");
+    var tab3 = ["Janvier","Février","Mars","Avril","Mai","Juin","Juillet", "Août","Septembre","Octobre", "Nouvember", "December"];
+    let text = document.querySelector('p');
+    let tex = document.getElementById('voir');
+
+    function displayTab() {
+      alert(tab);
+       text.innerHTML = tab;
+      }
+
+      function displayTab2() {
+        // console.table(tab2[3]);
+        tex.innerHTML = tab2;
+      }
+
+      function displayMois(j) {
+        // alert("Mois "+j+" = "+tab3[j]);
+        document.getElementById('Mois').innerHTML = "Mois "+j+" est le mois de "+tab3[j-1];
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/home/louiza/Bureau/HTML/bootstrap-4.6.0-dist/css/bootstrap.min.css">
+    <title>Exo3</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-6">
+          <h2>Mon Exo3 J-S</h2>
+          <form id="formul" action="index.html" method="post">
+            <input id="clic" type="button" name="" value="">
+            <button type="button" onclick="compteur()" name="button">Click</button>
+            <button type="button" onclick="resetForm()" name="button">ReClick</button>
+          </form>
+          <form class="" action="index.html" method="post">
+            <input id="cloc" type="button" name="" value="">
+            <button type="button" onclick="decompteur()" name="button">Click</button>
+            <button type="button" onclick="derebour()" name="button">ReClick</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript">
+       let counter = 1;
+     function compteur(){
+       var NmbrCalc = document.getElementById("clic");
+       NmbrCalc.value = counter;
+       counter ++;
+     }
+     function resetForm() {
+      var rese = document.getElementById('formul');
+      rese.reset();
+      // counter = 1;
+     }
+
+     var decounter = 10;
+   function decompteur(){
+       var NmbrDeCalc = document.getElementById("cloc");
+       NmbrDeCalc.value = decounter;
+       decounter --;
+   }
+   function derebour() {
+     document.getElementById("cloc").value = "";
+    decounter = 10;
+   }
+    </script>
+  </body>
+</html>
